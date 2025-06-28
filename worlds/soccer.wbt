@@ -440,6 +440,19 @@ DEF BALL Robot {
   controller "rcj_soccer_ball"
   synchronization FALSE
 }
+DEF CAMERA_ROBOT Robot {
+  translation 0 1.5 4
+  rotation 0 1 0 3.14
+  controller "camera_streamer"
+  children [
+    Camera {
+      name "scene_camera"
+      width 640
+      height 480
+      fieldOfView 1.57
+    }
+  ]
+}
 DEF B1 Robot {
   translation 0.369438 0.409009 0.0374016
   rotation 1.0823634158639528e-06 1.0483773613787562e-06 -0.9999999999988647 1.6026953071807208
