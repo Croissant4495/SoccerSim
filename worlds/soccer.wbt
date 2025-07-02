@@ -448,8 +448,8 @@ DEF CAMERA_ROBOT Robot {
   children [
     Camera {
       name "scene_camera"
-      width 720 
-      height 480
+      width 1280
+      height 720
     }
   ]
   name "Camera_bot"

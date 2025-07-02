@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 600px;
+}
+
+.left-panel {
+    flex: 0 0 300px;
+    background-color: #2a2a2a;
+    border: 2px solid #666;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.team-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.team-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #666;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.team-btn:hover {
+    background-color: #555;
+    border-color: #888;
+}
+
+.team-btn.selected {
+    background-color: #4a4a4a;
+    border-color: #888;
+}
+
+.file-chooser {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border: 2px solid #666;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-chooser:hover {
+    background-color: #555;
+    border-color: #888;
+}
+
+.file-chooser input {
+    display: none;
+}
+
+.code-editor-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #666;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+}
+
+.code-editor-header {
+    background-color: #333;
+    padding: 8px 12px;
+    border-bottom: 1px solid #666;
+    border-radius: 6px 6px 0 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.code-editor {
+    flex: 1;
+    background-color: #1e1e1e;
+    border: none;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #ffffff;
+    resize: none;
+    outline: none;
+    border-radius: 0 0 6px 6px;
+    line-height: 1.5;
+}
+
+.code-editor:focus {
+    background-color: #252525;
+}
+
+.editor-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.editor-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #666;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editor-btn:hover {
+    background-color: #555;
+    border-color: #888;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-controls {
+    text-align: center;
+}
+
+.game-title {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.control-btn {
+    padding: 15px 30px;
+    border: 2px solid #666;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.control-btn:hover {
+    background-color: #555;
+    border-color: #888;
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.preview-area {
+    flex: 1;
+    background-color: #2a2a2a;
+    border: 2px solid #666;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.preview-content {
+    flex: 1;
+    background-color: #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#cameraStream {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.stream-placeholder {
+    color: #666;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.file-info {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .left-panel {
+        flex: none;
+        order: 2;
+    }
+    
+    .right-panel {
+        order: 1;
+    }
+}

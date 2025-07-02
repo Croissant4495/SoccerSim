@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="tab.js"></script>
+    <title>Soccer Sim Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Soccer Sim Website</h1>
+    
+    <div class="container">
+        <div class="left-panel">
+            <div class="team-buttons">
+                <button class="team-btn" onclick="selectTeam('blue')">Blue</button>
+                <button class="team-btn" onclick="selectTeam('yellow')">Yellow</button>
+            </div>
+            
+            <div class="file-chooser" onclick="document.getElementById('fileInput').click();">
+                <span>Choose file</span>
+                <span>⬇</span>
+                <input type="file" id="fileInput" accept=".js,.py,.txt,.json" onchange="loadFile(event)">
+            </div>
+            <div class="file-info" id="fileInfo">No file selected</div>
+            
+            <div class="code-editor-container">
+                <div class="code-editor-header">Code Editor</div>
+                <textarea class="code-editor" placeholder="Load a file to start editing code..." id="codeEditor"></textarea>
+            </div>
+            
+            <div class="editor-buttons">
+                <button class="editor-btn" onclick="loadCode()">Load</button>
+                <button class="editor-btn" onclick="saveCode()">Save</button>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="game-controls">
+                <h2 class="game-title">Soccer Sim</h2>
+                <div class="control-buttons">
+                    <button class="control-btn" onclick="playGame()" id="playBtn">Play</button>
+                    <button class="control-btn" onclick="pauseGame()" id="pauseBtn" disabled>Pause</button>
+                </div>
+            </div>
+            
+            <div class="preview-area">
+                <h3 class="preview-title">Live preview</h3>
+                <div class="preview-content" id="previewContainer">
+                    <img id="cameraStream" alt="Waiting for stream..." style="display: none;" />
+                    <div class="stream-placeholder" id="streamPlaceholder">
+                        Waiting for stream...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
