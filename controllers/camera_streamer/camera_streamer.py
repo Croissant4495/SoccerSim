@@ -7,6 +7,16 @@ import websockets
 import numpy as np
 import cv2
 import time
+import threading
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+
+def start_http_server():
+    handler = SimpleHTTPRequestHandler
+    httpd = HTTPServer(("0.0.0.0", 8000), handler)
+    print("[HTTP] Server running at http://localhost:8000")
+    httpd.serve_forever()
+
 
 # Initialize Webots Robot and camera
 robot = Robot()
@@ -59,6 +69,10 @@ async def main():
         print("[WS] Server started on ws://localhost:8765")
         while robot.step(timestep) != -1:
             await asyncio.sleep(0.01)  # Maintain asyncio event loop
+
+
+# Start HTTP server in a background thread
+threading.Thread(target=start_http_server, daemon=True).start()
 
 # Run the server
 asyncio.run(main())
